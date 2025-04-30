@@ -3,11 +3,16 @@
     "description": "Brain Games",
     "type": "project",
     "license": "MIT",
-    "bin": ["bin/brain-games"],
-    "authors": [{
-        "name": "EugeneWinter",
-        "email": "corvoattano200529@gmail.com"
-    }],
+    "bin": [
+        "bin/brain-games",
+        "bin/brain-even"
+    ],
+    "authors": [
+        {
+            "name": "EugeneWinter",
+            "email": "corvoattano200529@gmail.com"
+        }
+    ],
     "require": {
         "wp-cli/php-cli-tools": "^0.11.11"
     },
@@ -29,6 +34,10 @@
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
-        }
-    }
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

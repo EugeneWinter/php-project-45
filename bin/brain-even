@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../src/Engine.php';
+require __DIR__ . '/../src/Games/Even.php';
+
+use function BrainGames\Engine\runGame;
+use function BrainGames\Games\Even\play;
+use function BrainGames\Games\Even\getDescription;
+
+runGame(play(), getDescription());
