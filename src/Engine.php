@@ -7,7 +7,9 @@ use function cli\prompt;
 
 function runGame(callable $getGameData, string $description): void
 {
+    require_once __DIR__ . '/cli.php'; // Используем require_once
     $name = welcomeUser();
+
     line($description);
 
     $roundsCount = 3;

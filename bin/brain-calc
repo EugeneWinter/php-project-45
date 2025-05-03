@@ -3,6 +3,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/engine.php';
-require __DIR__ . '/../src/games/even.php';
+require __DIR__ . '/../src/games/calc.php';
 
 runGame(getGameData(), getDescription());
