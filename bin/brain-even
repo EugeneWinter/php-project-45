@@ -2,11 +2,8 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/Engine.php';
-require __DIR__ . '/../src/Games/Even.php';
+require __DIR__ . '/../src/engine.php';
+require __DIR__ . '/../src/games/even.php';
+require __DIR__ . '/../src/cli.php'; 
 
-use function BrainGames\Engine\runGame;
-use function BrainGames\Games\Even\play;
-use function BrainGames\Games\Even\getDescription;
-
-runGame(play(), getDescription());
+runGame(getGameData(), getDescription());

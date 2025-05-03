@@ -2,16 +2,12 @@
 
 declare(strict_types=1);
 
-namespace BrainGames\Engine;
-
 use function cli\line;
 use function cli\prompt;
 
 function runGame(callable $getGameData, string $description): void
 {
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $name = welcomeUser();
     line($description);
 
     $roundsCount = 3;

@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace BrainGames\Games\Even;
-
 function isEven(int $number): bool
 {
     return $number % 2 === 0;
@@ -14,9 +12,9 @@ function getDescription(): string
     return 'Answer "yes" if the number is even, otherwise answer "no".';
 }
 
-function play(): callable
+function getGameData(): callable
 {
-    return function () {
+    return function (): array {
         $question = rand(1, 100);
         $correctAnswer = isEven($question) ? 'yes' : 'no';
 
