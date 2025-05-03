@@ -2,37 +2,32 @@
 
 declare(strict_types=1);
 
-function getDescription(): string
-{
-    return 'What number is missing in the progression?';
-}
+const DESCRIPTIONS = [
+    'en' => 'What number is missing in the progression?',
+    'ru' => 'Какое число пропущено в прогрессии?'
+];
 
-function generateProgression(int $start, int $step, int $length): array
+function getDescription(string $language): string
 {
-    $progression = [];
-    for ($i = 0; $i < $length; $i++) {
-        $progression[] = $start + $i * $step;
-    }
-    return $progression;
+    return DESCRIPTIONS[$language];
 }
 
 function getGameData(): callable
 {
     return function (): array {
         $length = rand(5, 10);
-        $step = rand(1, 10);
-        $start = rand(1, 50);
+        $step = rand(1, 5);
+        $start = rand(1, 20);
         $hiddenIndex = rand(0, $length - 1);
 
-        $progression = generateProgression($start, $step, $length);
-        $correctAnswer = (string) $progression[$hiddenIndex];
-        
-        $progression[$hiddenIndex] = '..';
-        $question = implode(' ', $progression);
+        $progression = [];
+        for ($i = 0; $i < $length; $i++) {
+            $progression[] = $i === $hiddenIndex ? '..' : $start + $i * $step;
+        }
 
-        return [
-            'question' => $question,
-            'correctAnswer' => $correctAnswer,
-        ];
+        $question = implode(' ', $progression);
+        $correctAnswer = (string) ($start + $hiddenIndex * $step);
+
+        return compact('question', 'correctAnswer');
     };
 }

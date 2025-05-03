@@ -2,32 +2,29 @@
 
 declare(strict_types=1);
 
-function getDescription(): string
-{
-    return 'Find the greatest common divisor of given numbers.';
-}
+const DESCRIPTIONS = [
+    'en' => 'Find the greatest common divisor of given numbers.',
+    'ru' => 'Найдите наибольший общий делитель данных чисел.'
+];
 
 function gcd(int $a, int $b): int
 {
-    while ($b != 0) {
-        $temp = $a % $b;
-        $a = $b;
-        $b = $temp;
-    }
-    return $a;
+    return $b ? gcd($b, $a % $b) : $a;
+}
+
+function getDescription(string $language): string
+{
+    return DESCRIPTIONS[$language];
 }
 
 function getGameData(): callable
 {
     return function (): array {
-        $num1 = rand(1, 100);
-        $num2 = rand(1, 100);
-        $question = "$num1 $num2";
-        $correctAnswer = (string) gcd($num1, $num2);
+        $a = rand(1, 50);
+        $b = rand(1, 50);
+        $question = "$a $b";
+        $correctAnswer = (string) gcd($a, $b);
 
-        return [
-            'question' => $question,
-            'correctAnswer' => $correctAnswer,
-        ];
+        return compact('question', 'correctAnswer');
     };
 }

@@ -5,13 +5,23 @@ declare(strict_types=1);
 use function cli\line;
 use function cli\prompt;
 
-function runGame(callable $getGameData, string $description): void
+const GAME_MESSAGES = [
+    'en' => [
+        'correct' => 'Correct!',
+        'wrong' => "'%s' is wrong answer ;(. Correct answer was '%s'.",
+        'try_again' => "Let's try again, %s!",
+    ],
+    'ru' => [
+        'correct' => 'Правильно!',
+        'wrong' => "'%s' неправильный ответ ;(. Правильный ответ '%s'.",
+        'try_again' => "Давайте попробуем ещё раз, %s!",
+    ]
+];
+
+function runGame(callable $getGameData, string $description, string $language, string $name): void
 {
-    require_once __DIR__ . '/cli.php'; // Используем require_once
-    $name = welcomeUser();
-
     line($description);
-
+    
     $roundsCount = 3;
     
     for ($i = 0; $i < $roundsCount; $i++) {
@@ -20,15 +30,17 @@ function runGame(callable $getGameData, string $description): void
         $answer = prompt('Your answer');
 
         if ($answer !== $correctAnswer) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
-            line("Let's try again, %s!", $name);
+            line(GAME_MESSAGES[$language]['wrong'], $answer, $correctAnswer);
+            line(GAME_MESSAGES[$language]['try_again'], $name);
             return;
         }
-
-        line('Correct!');
+        line(GAME_MESSAGES[$language]['correct']);
     }
-
-    line("Winner Winner Chicken Dinner, %s!", $name);
+    
+    line($language === 'ru' 
+        ? "Победа! Победа! Время обеда, %s!" 
+        : "Winner Winner Chicken Dinner, %s!", 
+    $name);
     line("        ,~.");
     line("       (o o)");
     line("      /  V  \\");

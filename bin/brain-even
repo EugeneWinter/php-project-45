@@ -2,7 +2,10 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../src/cli.php';
 require __DIR__ . '/../src/engine.php';
 require __DIR__ . '/../src/games/even.php';
 
-runGame(getGameData(), getDescription());
+$language = selectLanguage();
+$name = welcomeUser($language);
+runGame(getGameData(), getDescription($language), $language, $name);
