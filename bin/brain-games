@@ -1,9 +1,12 @@
 #!/usr/bin/env php
 <?php
+declare(strict_types=1);
+
+putenv('PHP_ENV=test');
 
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/cli.php';
-require __DIR__ . '/../src/engine.php';
+require __DIR__ . '/../src/Cli.php';
+require __DIR__ . '/../src/Engine.php';
 
 $language = selectLanguage();
 $name = welcomeUser($language);
@@ -13,31 +16,11 @@ while (true) {
     $choice = trim(fgets(STDIN));
     
     $games = [
-        '1' => [
-            'file' => 'even',
-            'title_en' => 'Even',
-            'title_ru' => 'Чётность'
-        ],
-        '2' => [
-            'file' => 'calc',
-            'title_en' => 'Calculator',
-            'title_ru' => 'Калькулятор'
-        ],
-        '3' => [
-            'file' => 'gcd',
-            'title_en' => 'GCD',
-            'title_ru' => 'НОД'
-        ],
-        '4' => [
-            'file' => 'progression',
-            'title_en' => 'Progression',
-            'title_ru' => 'Прогрессия'
-        ],
-        '5' => [
-            'file' => 'prime',
-            'title_en' => 'Prime',
-            'title_ru' => 'Простое число'
-        ]
+        '1' => ['file' => 'even', 'title_en' => 'Even', 'title_ru' => 'Чётность'],
+        '2' => ['file' => 'calc', 'title_en' => 'Calculator', 'title_ru' => 'Калькулятор'],
+        '3' => ['file' => 'gcd', 'title_en' => 'GCD', 'title_ru' => 'НОД'],
+        '4' => ['file' => 'progression', 'title_en' => 'Progression', 'title_ru' => 'Прогрессия'],
+        '5' => ['file' => 'prime', 'title_en' => 'Prime', 'title_ru' => 'Простое число']
     ];
     
     if ($choice === '0') {
@@ -45,7 +28,7 @@ while (true) {
     }
     
     if (isset($games[$choice])) {
-        $gameFile = __DIR__ . '/../src/games/' . $games[$choice]['file'] . '.php';
+        $gameFile = __DIR__ . '/../src/Games/' . ucfirst($games[$choice]['file']) . '.php';
         if (file_exists($gameFile)) {
             require $gameFile;
             runGame(getGameData(), getDescription($language), $language, $name);
