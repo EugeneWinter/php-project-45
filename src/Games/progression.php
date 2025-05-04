@@ -7,12 +7,12 @@ const DESCRIPTIONS = [
     'ru' => 'Какое число пропущено в прогрессии?'
 ];
 
-function getProgressionDescription(string $language): string
+function getDescription(string $language): string
 {
     return DESCRIPTIONS[$language];
 }
 
-function getProgressionGameData(): callable
+function getGameData(): callable
 {
     return function (): array {
         $length = rand(5, 10);
