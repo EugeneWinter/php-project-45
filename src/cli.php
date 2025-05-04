@@ -33,12 +33,16 @@ declare(strict_types=1);
 
     function selectLanguage(): string
     {
+        if (getenv('TEST_MODE') === 'true') {
+            return 'en';
+        }
+
         line(MESSAGES['en']['select_language']);
         line(MESSAGES['en']['language_options']);
         
         while (true) {
             $input = strtolower(trim(fgets(STDIN)));
-            if (in_array($input, LANGUAGES)) {
+            if (in_array($input, ['en', 'ru'])) {
                 return $input;
             }
             echo MESSAGES['en']['invalid_language'];
