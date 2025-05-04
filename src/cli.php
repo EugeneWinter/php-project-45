@@ -1,6 +1,5 @@
-    <?php
-
-    declare(strict_types=1); //Навал русификации 
+<?php
+declare(strict_types=1);
 
     use function cli\line;
     use function cli\prompt;
