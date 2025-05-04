@@ -2,8 +2,6 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/engine.php';
-require __DIR__ . '/../src/cli.php';
 
 $language = selectLanguage();
 $name = welcomeUser($language);
@@ -48,7 +46,9 @@ while (true) {
         $gameFile = __DIR__ . '/../src/games/' . $games[$choice]['file'] . '.php';
         if (file_exists($gameFile)) {
             require $gameFile;
-            runGame(getGameData(), getDescription($language), $language, $name);
+            $gameData = getGameData();
+            $description = getDescription($language);
+            runGame($gameData, $description, $language, $name);
         }
     } else {
         showMessage($language, 'invalid_choice');
