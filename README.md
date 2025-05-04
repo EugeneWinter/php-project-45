@@ -54,6 +54,17 @@ Winner Winner Chicken Dinner, Albert!
      /(  _  )\
       ^^   ^^
 ```
+```bash
+Welcome to the Brain Games!
+May I have your name? Albert
+Hello, Albert!
+Answer "yes" if the number is even, otherwise answer "no".
+
+Question: 15
+Your answer: yes
+'yes' is wrong answer ;(. Correct answer was 'no'.
+Let's try again, Albert!
+```
 
 - **Калькулятор**:
   - Три операции: сложение, вычитание, умножение
@@ -83,6 +94,18 @@ Your answer: 12
       ^^   ^^
 ```
 
+```bash
+Добро пожаловать в Игры Разума!
+Как вас зовут? Крис
+Привет, Крис!
+Каков результат выражения?
+
+Question: 5 + 3
+Your answer: 7
+'7' неправильный ответ ;(. Правильный ответ '8'.
+Давайте попробуем ещё раз, Крис!
+```
+
 - **Наибольший общий делитель**:
   - Алгоритм Евклида для вычисления
   - Парная генерация чисел
@@ -109,6 +132,18 @@ Winner Winner Chicken Dinner, Jill!
       /  V  \
      /(  _  )\
       ^^   ^^
+```
+
+```bash
+Welcome to the Brain Games!
+May I have your name? Jill
+Hello, Jill!
+Find the greatest common divisor of given numbers.
+
+Question: 25 50
+Your answer: 10
+'10' is wrong answer ;(. Correct answer was '25'.
+Let's try again, Jill!
 ```
 
 - **Арифметическая прогрессия**:
@@ -140,6 +175,18 @@ Your answer: 59
       ^^   ^^
 ```
 
+```bash
+Добро пожаловать в Игры Разума!
+Как вас зовут? Клэр
+Привет, Клэр!
+Какое число пропущено в прогрессии?
+
+Question: 5 7 9 .. 13 15
+Your answer: 10
+'10' неправильный ответ ;(. Правильный ответ '11'.
+Давайте попробуем ещё раз, Клэр!
+```
+
 - **Простое число**:
   - Оптимизированная проверка на простоту
   - Диапазон чисел 1-50
@@ -166,6 +213,18 @@ Winner Winner Chicken Dinner, Ada!
       /  V  \
      /(  _  )\
       ^^   ^^
+```
+
+```bash
+Welcome to the Brain Games!
+May I have your name? Ada
+Hello, Ada!
+Answer "yes" if given number is prime. Otherwise answer "no".
+
+Question: 7
+Your answer: no
+'no' is wrong answer ;(. Correct answer was 'yes'.
+Let's try again, Ada!
 ```
 
 ## 🚀 Запуск приложения
