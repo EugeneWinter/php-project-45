@@ -209,5 +209,4 @@ make brain-prime
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/EugeneWinter/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/EugeneWinter/php-project-45/actions)
-[![Actions Status](https://github.com/EugeneWinter/php-project-45/workflows/hexlet-check/badge.svg)](https://github.com/EugeneWinter/php-project-45/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/<YOUR_BADGE_ID>/maintainability)](https://codeclimate.com/github/EugeneWinter/php-project-45/maintainability)
