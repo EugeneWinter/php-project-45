@@ -26,10 +26,13 @@
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
+        "psr-4": {
+        "BrainGames\\": "src/"
+        },
         "files": [
-            "src/cli.php",
-            "src/engine.php"
-        ]
+        "src/cli.php",
+        "src/engine.php"
+    ]
     },
     "scripts": {
         "lint": "phpcs --standard=PSR12 src bin",
