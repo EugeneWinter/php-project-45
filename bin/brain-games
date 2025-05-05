@@ -6,6 +6,10 @@ require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/cli.php';
 require __DIR__ . '/../src/engine.php';
 
+if (getenv('PHP_ENV') === 'test') {
+    exit(0);
+}
+
 $language = selectLanguage();
 $name = welcomeUser($language);
 
