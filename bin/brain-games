@@ -2,8 +2,6 @@
 <?php
 declare(strict_types=1);
 
-putenv('PHP_ENV=test');
-
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/cli.php';
 require __DIR__ . '/../src/engine.php';
@@ -28,7 +26,7 @@ while (true) {
     }
     
     if (isset($games[$choice])) {
-        $gameFile = __DIR__ . '/../src/Games/' . ucfirst($games[$choice]['file']) . '.php';
+        $gameFile = __DIR__ . '/../src/games/' . $games[$choice]['file'] . '.php';
         if (file_exists($gameFile)) {
             require $gameFile;
             runGame(getGameData(), getDescription($language), $language, $name);
