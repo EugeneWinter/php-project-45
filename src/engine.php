@@ -5,19 +5,12 @@ use function cli\line;
 use function cli\prompt;
 
 const GAME_MESSAGES = [
-    'en' => [
-        'correct' => 'Correct!',
-        'wrong' => "'%s' is wrong answer ;(. Correct answer was '%s'.",
-        'try_again' => "Let's try again, %s!",
-    ],
-    'ru' => [
-        'correct' => 'Правильно!',
-        'wrong' => "'%s' неправильный ответ ;(. Правильный ответ '%s'.",
-        'try_again' => "Давайте попробуем ещё раз, %s!",
-    ]
+    'correct' => 'Correct!',
+    'wrong' => "'%s' is wrong answer ;(. Correct answer was '%s'.",
+    'try_again' => "Let's try again, %s!"
 ];
 
-function runGame(callable $getGameData, string $description, string $language, string $name): void
+function runGame(callable $getGameData, string $description, string $name): void
 {
     line($description);
     
@@ -29,17 +22,14 @@ function runGame(callable $getGameData, string $description, string $language, s
         $answer = prompt('Your answer');
 
         if ($answer !== $correctAnswer) {
-            line(GAME_MESSAGES[$language]['wrong'], $answer, $correctAnswer);
-            line(GAME_MESSAGES[$language]['try_again'], $name);
+            line(GAME_MESSAGES['wrong'], $answer, $correctAnswer);
+            line(GAME_MESSAGES['try_again'], $name);
             return;
         }
-        line(GAME_MESSAGES[$language]['correct']);
+        line(GAME_MESSAGES['correct']);
     }
     
-    line($language === 'ru' 
-        ? "Победа! Победа! Время обеда, %s!" 
-        : "Winner Winner Chicken Dinner, %s!", 
-    $name);
+    line("Winner Winner Chicken Dinner, %s!", $name);
     line("        ,~.");
     line("       (o o)");
     line("      /  V  \\");

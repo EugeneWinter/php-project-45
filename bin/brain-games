@@ -6,36 +6,31 @@ require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/cli.php';
 require __DIR__ . '/../src/engine.php';
 
-if (getenv('PHP_ENV') === 'test') {
-    exit(0);
-}
-
-$language = selectLanguage();
-$name = welcomeUser($language);
+$name = welcomeUser();
 
 while (true) {
-    showMenu($language);
+    showMenu();
     $choice = trim(fgets(STDIN));
     
     $games = [
-        '1' => ['file' => 'even', 'title_en' => 'Even', 'title_ru' => 'Чётность'],
-        '2' => ['file' => 'calc', 'title_en' => 'Calculator', 'title_ru' => 'Калькулятор'],
-        '3' => ['file' => 'gcd', 'title_en' => 'GCD', 'title_ru' => 'НОД'],
-        '4' => ['file' => 'progression', 'title_en' => 'Progression', 'title_ru' => 'Прогрессия'],
-        '5' => ['file' => 'prime', 'title_en' => 'Prime', 'title_ru' => 'Простое число']
+        '1' => ['file' => 'even', 'title' => 'Even'],
+        '2' => ['file' => 'calc', 'title' => 'Calculator'],
+        '3' => ['file' => 'gcd', 'title' => 'GCD'],
+        '4' => ['file' => 'progression', 'title' => 'Progression'],
+        '5' => ['file' => 'prime', 'title' => 'Prime']
     ];
     
     if ($choice === '0') {
-        exitGame($language, $name);
+        exitGame($name);
     }
     
     if (isset($games[$choice])) {
         $gameFile = __DIR__ . '/../src/games/' . $games[$choice]['file'] . '.php';
         if (file_exists($gameFile)) {
             require $gameFile;
-            runGame(getGameData(), getDescription($language), $language, $name);
+            runGame(getGameData(), getDescription(), $name);
         }
     } else {
-        showMessage($language, 'invalid_choice');
+        showMessage('invalid_choice');
     }
 }

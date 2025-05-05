@@ -1,15 +1,11 @@
 <?php
-
 declare(strict_types=1);
 
-const DESCRIPTIONS = [
-    'en' => 'What number is missing in the progression?',
-    'ru' => 'Какое число пропущено в прогрессии?'
-];
+const DESCRIPTION = 'What number is missing in the progression?';
 
-function getDescription(string $language): string
+function getDescription(): string
 {
-    return DESCRIPTIONS[$language];
+    return DESCRIPTION;
 }
 
 function getGameData(): callable

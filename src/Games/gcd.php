@@ -1,20 +1,16 @@
 <?php
-
 declare(strict_types=1);
 
-const DESCRIPTIONS = [
-    'en' => 'Find the greatest common divisor of given numbers.',
-    'ru' => 'Найдите наибольший общий делитель данных чисел.'
-];
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function gcd(int $a, int $b): int
 {
     return $b ? gcd($b, $a % $b) : $a;
 }
 
-function getDescription(string $language): string
+function getDescription(): string
 {
-    return DESCRIPTIONS[$language];
+    return DESCRIPTION;
 }
 
 function getGameData(): callable

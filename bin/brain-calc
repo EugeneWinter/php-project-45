@@ -6,6 +6,5 @@ require __DIR__ . '/../src/cli.php';
 require __DIR__ . '/../src/engine.php';
 require __DIR__ . '/../src/games/calc.php';
 
-$language = selectLanguage();
-$name = welcomeUser($language);
-runGame(getGameData(), getDescription($language), $language, $name);
+$name = welcomeUser();
+runGame(getGameData(), getDescription(), $name);

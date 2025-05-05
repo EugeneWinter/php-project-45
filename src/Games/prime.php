@@ -1,11 +1,7 @@
 <?php
-
 declare(strict_types=1);
 
-const DESCRIPTIONS = [
-    'en' => 'Answer "yes" if given number is prime. Otherwise answer "no".',
-    'ru' => 'Ответьте "yes", если число простое, иначе ответьте "no".'
-];
+const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrime(int $num): bool
 {
@@ -16,9 +12,9 @@ function isPrime(int $num): bool
     return true;
 }
 
-function getDescription(string $language): string
+function getDescription(): string
 {
-    return DESCRIPTIONS[$language];
+    return DESCRIPTION;
 }
 
 function getGameData(): callable

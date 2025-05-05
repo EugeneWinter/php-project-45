@@ -1,20 +1,16 @@
 <?php
-
 declare(strict_types=1);
 
-const DESCRIPTIONS = [
-    'en' => 'Answer "yes" if the number is even, otherwise answer "no".',
-    'ru' => 'Ответьте "yes", если число чётное, иначе ответьте "no".'
-];
+const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function isEven(int $number): bool
 {
     return $number % 2 === 0;
 }
 
-function getDescription(string $language): string
+function getDescription(): string
 {
-    return DESCRIPTIONS[$language];
+    return DESCRIPTION;
 }
 
 function getGameData(): callable

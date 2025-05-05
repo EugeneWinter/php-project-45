@@ -1,11 +1,7 @@
 <?php
-
 declare(strict_types=1);
 
-const DESCRIPTIONS = [
-    'en' => 'What is the result of the expression?',
-    'ru' => 'Каков результат выражения?'
-];
+const DESCRIPTION = 'What is the result of the expression?';
 
 function calculate(int $a, int $b, string $operator): int
 {
@@ -17,9 +13,9 @@ function calculate(int $a, int $b, string $operator): int
     };
 }
 
-function getDescription(string $language): string
+function getDescription(): string
 {
-    return DESCRIPTIONS[$language];
+    return DESCRIPTION;
 }
 
 function getGameData(): callable
