@@ -15,10 +15,9 @@ function getDescription(): string
 
 function getGameData(): callable
 {
-    return function (): array {
+    return function(): array {
         $number = rand(1, 100);
         $correctAnswer = isEven($number) ? 'yes' : 'no';
-
         return [
             'question' => (string) $number,
             'correctAnswer' => $correctAnswer
