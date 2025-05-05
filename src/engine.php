@@ -29,10 +29,5 @@ function runGame(callable $getGameData, string $description, string $name): void
         line(GAME_MESSAGES['correct']);
     }
     
-    line("Winner Winner Chicken Dinner, %s!", $name);
-    line("        ,~.");
-    line("       (o o)");
-    line("      /  V  \\");
-    line("     /(  _  )\\");
-    line("      ^^   ^^");
+    line("Congratulations, %s!", $name);
 }
