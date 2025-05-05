@@ -4,33 +4,6 @@ declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/cli.php';
-require __DIR__ . '/../src/engine.php';
 
 $name = welcomeUser();
-
-while (true) {
-    showMenu();
-    $choice = trim(fgets(STDIN));
-    
-    $games = [
-        '1' => ['file' => 'even', 'title' => 'Even'],
-        '2' => ['file' => 'calc', 'title' => 'Calculator'],
-        '3' => ['file' => 'gcd', 'title' => 'GCD'],
-        '4' => ['file' => 'progression', 'title' => 'Progression'],
-        '5' => ['file' => 'prime', 'title' => 'Prime']
-    ];
-    
-    if ($choice === '0') {
-        exitGame($name);
-    }
-    
-    if (isset($games[$choice])) {
-        $gameFile = __DIR__ . '/../src/games/' . $games[$choice]['file'] . '.php';
-        if (file_exists($gameFile)) {
-            require $gameFile;
-            runGame(getGameData(), getDescription(), $name);
-        }
-    } else {
-        showMessage('invalid_choice');
-    }
-}
+exit(0);
