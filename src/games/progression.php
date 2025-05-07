@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-const DESCRIPTION = 'What number is missing in the progression?';
+const PROGRESSION_GAME_DESCRIPTION = 'What number is missing in the progression?';
 
-function getDescription(): string
+function getProgressionDescription(): string
 {
-    return DESCRIPTION;
+    return PROGRESSION_GAME_DESCRIPTION;
 }
 
-function getGameData(): callable
+function getProgressionGameData(): callable
 {
     return function (): array {
         $length = rand(5, 10);

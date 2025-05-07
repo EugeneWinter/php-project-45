@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+const EVEN_GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function isEven(int $number): bool
 {
     return $number % 2 === 0;
 }
 
-function getDescription(): string
+function getEvenDescription(): string
 {
-    return DESCRIPTION;
+    return EVEN_GAME_DESCRIPTION;
 }
 
-function getGameData(): callable
+function getEvenGameData(): callable
 {
     return function(): array {
         $number = rand(1, 100);

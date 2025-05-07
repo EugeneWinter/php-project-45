@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const PRIME_GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrime(int $num): bool
 {
@@ -12,12 +12,12 @@ function isPrime(int $num): bool
     return true;
 }
 
-function getDescription(): string
+function getPrimeDescription(): string
 {
-    return DESCRIPTION;
+    return PRIME_GAME_DESCRIPTION;
 }
 
-function getGameData(): callable
+function getPrimeGameData(): callable
 {
     return function (): array {
         $number = rand(1, 50);

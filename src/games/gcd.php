@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
+const GCD_GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function gcd(int $a, int $b): int
 {
     return $b ? gcd($b, $a % $b) : $a;
 }
 
-function getDescription(): string
+function getGcdDescription(): string
 {
-    return DESCRIPTION;
+    return GCD_GAME_DESCRIPTION;
 }
 
-function getGameData(): callable
+function getGcdGameData(): callable
 {
     return function (): array {
         $a = rand(1, 50);

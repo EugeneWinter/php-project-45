@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-const DESCRIPTION = 'What is the result of the expression?';
+const CALC_GAME_DESCRIPTION = 'What is the result of the expression?';
 
 function calculate(int $a, int $b, string $operator): int
 {
@@ -13,12 +13,12 @@ function calculate(int $a, int $b, string $operator): int
     };
 }
 
-function getDescription(): string
+function getCalcDescription(): string
 {
-    return DESCRIPTION;
+    return CALC_GAME_DESCRIPTION;
 }
 
-function getGameData(): callable
+function getCalcGameData(): callable
 {
     return function (): array {
         $operators = ['+', '-', '*'];

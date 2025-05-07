@@ -2,9 +2,6 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/cli.php';
-require __DIR__ . '/../src/engine.php';
-require __DIR__ . '/../src/games/gcd.php';
 
 $name = welcomeUser();
-runGame(getGameData(), getDescription(), $name);
+runGame(getGcdGameData(), getGcdDescription(), $name);
