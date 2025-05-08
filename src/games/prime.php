@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 const PRIME_GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
