@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 const CALC_GAME_DESCRIPTION = 'What is the result of the expression?';
