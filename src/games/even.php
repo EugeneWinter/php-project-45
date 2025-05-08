@@ -1,4 +1,4 @@
-    <?php
+<?php
 declare(strict_types=1);
 
 const EVEN_GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
