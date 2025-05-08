@@ -6,7 +6,7 @@ const GCD_GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.
 
 function gcd(int $a, int $b): int
 {
-    return $b ? gcd($b, $a % $b) : $a;
+    return $b !== 0 ? gcd($b, $a % $b) : $a;
 }
 
 function getGcdDescription(): string

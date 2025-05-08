@@ -33,7 +33,7 @@ function exitGame(string $name): void
     exit;
 }
 
-function showMessage(string $key, ...$args): void
+function showMessage(string $key, mixed ...$args): void
 {
     line(MESSAGES[$key], ...$args);
 }
