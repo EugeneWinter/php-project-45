@@ -5,10 +5,16 @@ const PRIME_GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise
 
 function isPrime(int $num): bool
 {
-    if ($num < 2) return false;
-    for ($i = 2, $max = sqrt($num); $i <= $max; $i++) {
-        if ($num % $i === 0) return false;
+    if ($num < 2) {
+        return false;
     }
+    
+    for ($i = 2, $max = sqrt($num); $i <= $max; $i++) {
+        if ($num % $i === 0) {
+            return false;
+        }
+    }
+    
     return true;
 }
 
