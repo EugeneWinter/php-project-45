@@ -13,9 +13,9 @@ const GAME_MESSAGES = [
 function runGame(callable $getGameData, string $description, string $name): void
 {
     line($description);
-    
+
     $roundsCount = 3;
-    
+
     for ($i = 0; $i < $roundsCount; $i++) {
         ['question' => $question, 'correctAnswer' => $correctAnswer] = $getGameData();
         line("Question: %s", $question);
@@ -28,6 +28,6 @@ function runGame(callable $getGameData, string $description, string $name): void
         }
         line(GAME_MESSAGES['correct']);
     }
-    
+
     line("Congratulations, %s!", $name);
 }

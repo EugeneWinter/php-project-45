@@ -8,13 +8,13 @@ function isPrime(int $num): bool
     if ($num < 2) {
         return false;
     }
-    
+
     for ($i = 2, $max = sqrt($num); $i <= $max; $i++) {
         if ($num % $i === 0) {
             return false;
         }
     }
-    
+
     return true;
 }
 
