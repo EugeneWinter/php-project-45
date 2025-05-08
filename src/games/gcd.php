@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 const GCD_GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
