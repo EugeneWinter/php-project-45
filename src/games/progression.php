@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 const PROGRESSION_GAME_DESCRIPTION = 'What number is missing in the progression?';
