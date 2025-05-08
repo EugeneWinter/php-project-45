@@ -16,7 +16,7 @@ function getEvenDescription(): string
 
 function getEvenGameData(): callable
 {
-    return function(): array {
+    return function (): array {
         $number = rand(1, 100);
         $correctAnswer = isEven($number) ? 'yes' : 'no';
         return [
