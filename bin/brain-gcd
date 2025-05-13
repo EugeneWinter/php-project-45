@@ -1,7 +1,14 @@
 #!/usr/bin/env php
 <?php
 
+declare(strict_types=1);
+
 require __DIR__ . '/../vendor/autoload.php';
+
+use function EugeneWinter\BrainGames\welcomeUser;
+use function EugeneWinter\BrainGames\Engine\runGame;
+use function EugeneWinter\BrainGames\Games\Gcd\getGcdDescription;
+use function EugeneWinter\BrainGames\Games\Gcd\getGcdGameData;
 
 $name = welcomeUser();
 runGame(getGcdGameData(), getGcdDescription(), $name);

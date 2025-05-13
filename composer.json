@@ -1,6 +1,6 @@
 {
-    "name": "hexlet/code",
-    "description": "Brain Games",
+    "name": "eugenewinter/braingames",
+    "description": "Brain Games - A collection of math mini-games",
     "type": "project",
     "license": "MIT",
     "bin": [
@@ -26,20 +26,23 @@
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
-        "files": [
-            "src/cli.php",
-            "src/engine.php",
-            "src/games/even.php",
-            "src/games/calc.php",
-            "src/games/gcd.php",
-            "src/games/progression.php",
-            "src/games/prime.php"
-        ]
+        "psr-4": {
+            "EugeneWinter\\BrainGames\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EugeneWinter\\BrainGames\\Tests\\": "tests/"
+        }
     },
     "scripts": {
-        "lint": "phpcs --standard=PSR12 src bin",
-        "lint-fix": "phpcbf --standard=PSR12 src bin",
-        "test": "phpunit"
+        "lint": "phpcs --standard=PSR12 src bin tests",
+        "lint-fix": "phpcbf --standard=PSR12 src bin tests",
+        "test": "phpunit",
+        "post-autoload-dump": [
+            "phpcs --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+            "phpcs --config-set default_standard PSR12"
+        ]
     },
     "config": {
         "allow-plugins": {

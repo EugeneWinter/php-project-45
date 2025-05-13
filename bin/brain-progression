@@ -1,7 +1,14 @@
 #!/usr/bin/env php
 <?php
 
+declare(strict_types=1);
+
 require __DIR__ . '/../vendor/autoload.php';
+
+use function EugeneWinter\BrainGames\Engine\runGame;
+use function EugeneWinter\BrainGames\Games\Progression\getProgressionDescription;
+use function EugeneWinter\BrainGames\Games\Progression\getProgressionGameData;
+use function EugeneWinter\BrainGames\welcomeUser;
 
 $name = welcomeUser();
 runGame(getProgressionGameData(), getProgressionDescription(), $name);

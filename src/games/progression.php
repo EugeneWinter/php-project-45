@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace EugeneWinter\BrainGames\Games\Progression;
+
 const PROGRESSION_GAME_DESCRIPTION = 'What number is missing in the progression?';
 
 function getProgressionDescription(): string

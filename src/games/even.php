@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace EugeneWinter\BrainGames\Games\Even;
+
 const EVEN_GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function isEven(int $number): bool

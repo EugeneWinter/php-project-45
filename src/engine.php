@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace EugeneWinter\BrainGames\Engine;
+
 use function cli\line;
 use function cli\prompt;
 

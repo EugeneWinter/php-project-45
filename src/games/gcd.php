@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace EugeneWinter\BrainGames\Games\Gcd;
+
 const GCD_GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function gcd(int $a, int $b): int

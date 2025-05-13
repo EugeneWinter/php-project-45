@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace EugeneWinter\BrainGames;
+
 const MESSAGES = [
     'welcome' => 'Welcome to the Brain Games!',
     'ask_name' => 'May I have your name?',
