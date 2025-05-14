@@ -8,7 +8,7 @@ require __DIR__ . '/../vendor/autoload.php';
 use function EugeneWinter\BrainGames\Engine\runGame;
 use function EugeneWinter\BrainGames\Games\Prime\getPrimeDescription;
 use function EugeneWinter\BrainGames\Games\Prime\getPrimeGameData;
-use function EugeneWinter\BrainGames\welcomeUser;
+use function EugeneWinter\BrainGames\Cli\welcomeUser;
 
 $name = welcomeUser();
 runGame(getPrimeGameData(), getPrimeDescription(), $name);

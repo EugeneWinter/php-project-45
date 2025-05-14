@@ -28,7 +28,16 @@
     "autoload": {
         "psr-4": {
             "EugeneWinter\\BrainGames\\": "src/"
-        }
+        },
+        "files": [
+            "src/Cli.php",
+            "src/Engine.php",
+            "src/Games/Calc.php",
+            "src/Games/Even.php",
+            "src/Games/Gcd.php",
+            "src/Games/Prime.php",
+            "src/Games/Progression.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

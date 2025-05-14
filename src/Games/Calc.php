@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace EugeneWinter\BrainGames\Games\Calc;
 
+use Exception;
+
 const CALC_GAME_DESCRIPTION = 'What is the result of the expression?';
 
 function calculate(int $a, int $b, string $operator): int

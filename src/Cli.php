@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace EugeneWinter\BrainGames;
+namespace EugeneWinter\BrainGames\Cli;
 
 const MESSAGES = [
     'welcome' => 'Welcome to the Brain Games!',

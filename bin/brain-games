@@ -5,7 +5,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use function EugeneWinter\BrainGames\welcomeUser;
+use function EugeneWinter\BrainGames\Cli\welcomeUser;
 
 $name = welcomeUser();
 exit(0);
