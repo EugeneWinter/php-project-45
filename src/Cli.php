@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace EugeneWinter\BrainGames\Cli;
+namespace EugeneWinter\BrainGames;
 
 const MESSAGES = [
     'welcome' => 'Welcome to the Brain Games!',
@@ -14,15 +14,6 @@ const MESSAGES = [
 ];
 
 use function cli\line;
-use function cli\prompt;
-
-function welcomeUser(): string
-{
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line('Hello, %s!', $name);
-    return $name;
-}
 
 function showMenu(): void
 {

@@ -8,7 +8,7 @@ require __DIR__ . '/../vendor/autoload.php';
 use function EugeneWinter\BrainGames\Engine\runGame;
 use function EugeneWinter\BrainGames\Games\Even\getEvenDescription;
 use function EugeneWinter\BrainGames\Games\Even\getEvenGameData;
-use function EugeneWinter\BrainGames\Cli\welcomeUser;
+use function EugeneWinter\BrainGames\Engine\welcomeUser;
 
 $name = welcomeUser();
 runGame(getEvenGameData(), getEvenDescription(), $name);

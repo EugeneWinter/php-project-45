@@ -13,6 +13,20 @@ const GAME_MESSAGES = [
     'try_again' => "Let's try again, %s!"
 ];
 
+const MESSAGES = [
+    'welcome' => 'Welcome to the Brain Games!',
+    'ask_name' => 'May I have your name?',
+    'hello' => 'Hello, %s!',
+];
+
+function welcomeUser(): string
+{
+    line(MESSAGES['welcome']);
+    $name = prompt(MESSAGES['ask_name']);
+    line(MESSAGES['hello'], $name);
+    return $name;
+}
+
 function runGame(callable $getGameData, string $description, string $name): void
 {
     line($description);
